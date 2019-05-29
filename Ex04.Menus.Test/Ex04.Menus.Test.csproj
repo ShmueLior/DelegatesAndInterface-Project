@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="TestFunction\CountDigits.cs" />
+    <Compile Include="TestFunction\ShowDate.cs" />
+    <Compile Include="TestFunction\ShowTime.cs" />
+    <Compile Include="TestFunction\ShowVersion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TestDelegates.cs" />
     <Compile Include="TestInterface.cs" />

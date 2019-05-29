@@ -14,6 +14,7 @@
         public string Title
         {
             get { return m_Titel; }
+            set { m_Titel = value; }
         }
 
         public Menu PreviousMenu

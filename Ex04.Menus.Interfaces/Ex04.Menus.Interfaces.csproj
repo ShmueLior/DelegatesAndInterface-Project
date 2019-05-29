@@ -37,10 +37,6 @@
   <ItemGroup>
     <Compile Include="ActiveItem.cs" />
     <Compile Include="Interfaces\IDoActionListener.cs" />
-    <Compile Include="Listeners\CountDigits.cs" />
-    <Compile Include="Listeners\ShowDate.cs" />
-    <Compile Include="Listeners\ShowTime.cs" />
-    <Compile Include="Listeners\ShowVersion.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />

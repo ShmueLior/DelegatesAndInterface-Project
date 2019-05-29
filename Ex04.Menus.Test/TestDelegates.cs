@@ -1,5 +1,5 @@
-﻿using System;
-using Ex04.Menus.Delegates;
+﻿using Ex04.Menus.Delegates;
+using Ex04.Menus.Test.TestFunction;
 
 namespace Ex04.Menus.Test
 {   
@@ -13,47 +13,16 @@ namespace Ex04.Menus.Test
             BuildMenu();
         }
 
-        public void CountDigits()
-        {
-            int countDigits = 0;
-            Console.WriteLine("Please enter string:");
-            string inputString = Console.ReadLine();
-            foreach (char charIter in inputString)
-            {
-                if (char.IsDigit(charIter))
-                {
-                    countDigits++;
-                }
-            }
-
-            Console.WriteLine("There are {0} digits in your input string", countDigits);
-        }
-
-        public void ShowDate()
-        {
-            Console.WriteLine(DateTime.Now.ToShortDateString());
-        }
-
-        public void ShowTime()
-        {
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-        }
-
-        public void ShowVersion()
-        {
-            Console.WriteLine("Version: 19.2.4.32");
-        }
-
         public void BuildMenu()
         {
             SubMenu subMenu = new SubMenu("Show Date / Time", r_MainMenu);
 
             ActiveItem activeItem = new ActiveItem("Show Date", subMenu);
-            activeItem.Notifier += this.ShowDate;
+            activeItem.Notifier += new ShowDate().DoAction;
             subMenu.AddMenuItem(activeItem);
 
             activeItem = new ActiveItem("Show Time", subMenu);
-            activeItem.Notifier += this.ShowTime;
+            activeItem.Notifier += new ShowTime().DoAction;
             subMenu.AddMenuItem(activeItem);
 
             r_MainMenu.AddMenuItem(subMenu);
@@ -61,11 +30,11 @@ namespace Ex04.Menus.Test
             subMenu = new SubMenu("Version and Digits", r_MainMenu);
 
             activeItem = new ActiveItem("Count Digits", subMenu);
-            activeItem.Notifier += this.CountDigits;
+            activeItem.Notifier += new CountDigits().DoAction;
             subMenu.AddMenuItem(activeItem);
 
             activeItem = new ActiveItem("Show Version", subMenu);
-            activeItem.Notifier += this.ShowVersion;
+            activeItem.Notifier += new ShowVersion().DoAction;
             subMenu.AddMenuItem(activeItem);
 
             r_MainMenu.AddMenuItem(subMenu);

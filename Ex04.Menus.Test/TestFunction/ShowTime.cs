@@ -1,7 +1,7 @@
 ﻿using System;
 using Ex04.Menus.Interfaces.Interfaces;
 
-namespace Ex04.Menus.Interfaces.Listeners
+namespace Ex04.Menus.Test.TestFunction
 {
     public class ShowTime : IDoActionListener
     {
